@@ -5,23 +5,15 @@
  * ********************************************************************************************** */
 
 #include <iostream>
-using std::cin;
-using std::cout;
-using std::cerr;
-using std::endl;
-using std::istream;
-using std::ostream;
-
-#include <vector>
-using std::vector;
-using std::begin;
-using std::end;
-
+#include <fstream>
 #include <string>
+
+using std::cout; using std::cerr; using std::endl;
 using std::string;
 
 /* ********************************************************************************************** *
- *                                          Puzzle Input                                          *
+ *                                         Advent of Code                                         *
  * ********************************************************************************************** */
 
-
+int part1(std::istream &);
+int part2(std::istream &);
