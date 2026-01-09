@@ -5,4 +5,5 @@
   </Configurations>
   <Project Path="Day 1/Day 1.vcxproj" Id="faf62294-1684-4788-a996-5252a0967a22" />
   <Project Path="Day 2/Day 2.vcxproj" Id="a4f89044-3e89-4648-9662-35d26367ba1d" />
+  <Project Path="Day 3/Day 3.vcxproj" />
 </Solution>
