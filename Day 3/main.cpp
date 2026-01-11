@@ -3,7 +3,7 @@
 int main(int argc, char **argv) {
 	std::ifstream fin;
 	const char *part1_fn = "puzzle_input.txt";
-	const char *part2_fn = "example.txt";
+	const char *part2_fn = "puzzle_input.txt";
 
 	// Part 1
 	fin.open(part1_fn);
