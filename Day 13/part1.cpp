@@ -1,6 +1,6 @@
 #include "header.h"
 
-static int horizontal_symmetry(const vector<string> &ground) {
+static int find_symmetry(const vector<string> &ground) {
 	for (int row = 1; row != ground.size(); ++row) {
 		for (int offset = 0;; ++offset) {
 			if (ground[row + offset] != ground[row - 1 - offset]) {
@@ -15,7 +15,7 @@ static int horizontal_symmetry(const vector<string> &ground) {
 }
 
 int part1(std::istream &fin) {
-	int retval = -1;
+	int retval = 0;
 
 	while (fin) {
 		// Create map of the ground
@@ -26,7 +26,7 @@ int part1(std::istream &fin) {
 		}
 
 		// Determine if there's a horizontal line symmetry
-		int symm = horizontal_symmetry(ground);
+		int symm = find_symmetry(ground);
 		if (symm) {
 			retval += 100 * symm;
 			continue;
@@ -38,17 +38,15 @@ int part1(std::istream &fin) {
 			transposed_ground.push_back(accumulate(
 				ground.cbegin(), ground.cend(), string(),
 				[x](string s, string e) { return s + e[x]; }
-			))
+			));
 		}
 
 		// Determine if there's a vertical line symmetry
-
-		cout << endl << "Start" << endl;
-		for (auto line : ground) {
-			cout << line << endl;
+		symm = find_symmetry(transposed_ground);
+		if (symm) {
+			retval += symm;
+			continue;
 		}
-		cout << "Vertical: " << horizontal_symmetry(ground) << endl;
-		cout << "End" << endl;
 	}
 
 	return retval;
